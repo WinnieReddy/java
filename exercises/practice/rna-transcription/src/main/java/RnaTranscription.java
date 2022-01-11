@@ -1,7 +1,22 @@
 class RnaTranscription {
 
     String transcribe(String dnaStrand) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if(dnaStrand.length ==0){
+            return "";
     }
-
+        String head = transcribeOnePart(dnaStrand.substring(0,1));
+        String tail = transcribe(dnaStrand(1));
+        
+        return head+ tail;
+    }
+    String transcribeOnePart(String dnaPart){
+        switch(dnaPart):{
+            case "C": return "G";
+            case "G": return "C";
+            case "A": return "U";
+            case "T": return "A";
+        }
+    
+    }
+        
 }
